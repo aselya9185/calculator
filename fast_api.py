@@ -1,7 +1,4 @@
 from fastapi import FastAPI
-
-
-from fastapi import FastAPI
 from pydantic import BaseModel
 from calculator.calculator import calculate
 
