@@ -21,6 +21,6 @@ BACKEND_URL = "https://calculator-ceeh.onrender.com"
 
 # when the user clicks on button it will fetch the API
 if st.button("Calculate"):
-    res = requests.post(url = "http://127.0.0.1:8000/calculate", data = json.dumps(inputs))
+    res = requests.post(url = f"{BACKEND_URL}/calculate", data = json.dumps(inputs))
 
     st.subheader(f"Response from API = {res.text}")
