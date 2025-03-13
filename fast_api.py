@@ -1,9 +1,6 @@
 from fastapi import FastAPI
-
-
-from fastapi import FastAPI
 from pydantic import BaseModel
-from calculator.calculator import calculate
+from calculator import calculate
 
 class User_input(BaseModel):
     operation : str

@@ -2,11 +2,12 @@ import streamlit as st
 import json
 import requests
 
+
 st.title("Basic Calculator App")
 
 # taking user inputs
 option = st.selectbox("What operation you want to perform?",
-                      ('Addition', 'Subtraction', 'Multiplication', 'Division'))
+                      ('add', 'sub', 'mul', 'div'))
 
 st.write("")
 st.write("Select the numbers from slider below")
@@ -18,6 +19,6 @@ inputs = {"operation": option, "x": x, "y": y}
 
 # when the user clicks on button it will fetch the API
 if st.button("Calculate"):
-    res = requests.post(url = "http://127.0.0.1:8000/calculator", data = json.dumps(inputs))
+    res = requests.post(url = "http://127.0.0.1:8000/calculate", data = json.dumps(inputs))
 
     st.subheader(f"Response from API = {res.text}")
