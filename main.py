@@ -79,3 +79,5 @@ if ans_button:
     except Exception as e:
         st.write("Error:", str(e))
 
+# Output result field
+result_field = st.text_input("Result:", value="", key="result")
