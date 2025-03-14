@@ -23,6 +23,7 @@ st.markdown("""
 # Create a column layout for the operands
 col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
 
+<<<<<<< HEAD
 # Create buttons for the operands
 with col1:
     st.button("sqrt")
@@ -67,27 +68,15 @@ if st.button("Clear"):
 # Display the whole expression
 st.write("Expression:", expression)
 
+BACKEND_URL = "https://calculator-ceeh.onrender.com"
+
 # Create a button to calculate the expression
 if ans_button:
     try:
         inputs = {"expression": expression}
-        res = requests.post(url="http://127.0.0.1:8000/calculate", data=json.dumps(inputs))
+        res = requests.post(url=f"{BACKEND_URL}/calculate", data=json.dumps(inputs))
         result = res.json()["result"]
         st.write("Result:", result)
     except Exception as e:
         st.write("Error:", str(e))
 
-
-
-
-# # converting the inputs to json
-# inputs = {"operation": option, "x": x, "y": y}
-#
-# # when the user clicks on button it will fetch the API
-# if st.button("Calculate"):
-#     res = requests.post(url = "http://127.0.0.1:8000/calculate", data = json.dumps(inputs))
-#
-#     if res.status_code == 200:
-#         st.subheader(f"Response from API = {res.text}")
-#     else:
-#         st.subheader(f"Response from API = {res.status_code}")
