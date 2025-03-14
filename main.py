@@ -48,15 +48,15 @@ with col3:
 with col4:
     st.button("log")
     st.button("(")
-    st.button("*")
+    st.button("×")
     st.button("+")
     st.button("0")
 
 with col5:
     st.button("ln")
     st.button(")")
-    st.button("/")
-    st.button("-")
+    st.button("÷")
+    st.button("−")
     ans_button = st.button("ans")
 
 # Create a button to clear the expression
